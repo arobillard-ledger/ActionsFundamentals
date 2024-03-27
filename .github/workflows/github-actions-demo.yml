@@ -1,0 +1,17 @@
+name: GitHub Actions Demo
+run-name: Test workflow ${{ github.run_number }}
+
+defaults:
+  run:
+    shell: pwsh
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: [.github/**] 
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '15 6 * * SUN'
+  workflow_dispatch:
+    
