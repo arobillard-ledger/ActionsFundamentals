@@ -15,3 +15,15 @@ on:
     - cron: '15 6 * * SUN'
   workflow_dispatch:
     
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Event name:${{ github.event_name }}"
+          echo "Branch name:${{ github.ref }} / Repo name:${{ github.repository }}"
+      - uses: actions/checkout@v4.0.0
+      - name: Repository file list
+        run: |
+          echo "The repo has these files:"
+          tree
