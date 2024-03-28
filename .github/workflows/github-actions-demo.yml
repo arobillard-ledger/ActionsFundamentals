@@ -14,6 +14,11 @@ on:
   schedule:
     - cron: '15 6 * * SUN'
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose the env to deploy to'
+        type: environment
+        required: true
     
 jobs:
   Build:
